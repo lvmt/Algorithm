@@ -6,7 +6,6 @@
 
 class Solution(object):
 
-
     def guessNumber(self, n, num):
         """
         :type n: int
