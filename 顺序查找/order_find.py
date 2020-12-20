@@ -2,7 +2,9 @@
 #-*- coding:utf-8 -*-
 
 def serial_find(li, item):
-    '''顺序查找
+    '''
+    顺序查找
+    时间复杂度：O(n)
     '''
     for i in range(len(li)):
         if li[i] == item:
