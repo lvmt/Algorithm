@@ -3,8 +3,7 @@
 # @Author lvmengting
 # @Time   2020/12/25 11:36
 # @Email  13554221497@163.com
-# @File   约瑟夫问题.py
-
+# @File   约瑟夫问题.py, 利用队列实现.
 
 """
 利用队列解决约瑟夫问题
