@@ -6,13 +6,57 @@
 # @File   优先队列.py
 
 
-"""
-优先级队列是一种容器型数据结构，它能管理一队记录，并按照排序字段（例如一个数字类型的权重值）为其排序。
-由于是排序的，所以在优先级队列中你可以快速获取到最大的和最小的值。
+import heapq
+from queue import PriorityQueue as PQ
 
-可以认为优先级队列是一种修改过的普通队列：普通队列依据记录插入的时间来获取下一个记录，
-而优先级队列依据优先级来获取下一个记录，优先级取决于排序字段的值。
 
-优先级队列常用来解决调度问题，比如给紧急的任务更高的优先级。以操作系统的任务调度为例：高优先级的任务（比如实时游戏）应该先于低优先级的任务（比如后台下载软件更新）执行。
-"""
+class SmallestQueue:
+
+    def __init__(self):
+        self.q = []
+
+    def enqueue(self, value):
+        heapq.heappush(self.q, value)
+
+    def dequeue(self):
+        """默认删除最小元素"""
+        return heapq.heappop(self.q)
+
+    def show(self):
+        print(self.q)
+
+
+# q = SmallestQueue()
+# q.enqueue(4)
+# q.enqueue(2)
+# q.enqueue(5)
+# q.show()  # 2, 4, 5
+
+
+class PriorityQ:
+    def __init__(self):
+        self.q = PQ()
+
+    def enqueue(self, value):
+        self.q.put(value)
+
+    def dequeue(self):
+        return self.q.get()
+
+    def show(self):
+        print(self.q.queue)
+
+    def size(self):
+        return len(self.q.queue)
+
+
+q = PriorityQ()
+q.enqueue(5)
+q.enqueue(1)
+q.enqueue(3)
+q.enqueue(2)
+q.show()  # 1,2,3,5
+print(q.dequeue())  # 1
+print(q.dequeue())  # 2
+print(q.size())
 
