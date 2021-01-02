@@ -90,7 +90,9 @@ class SingleLinkedList:
         return False
 
 
-
+head = Node(1, None)
+SingleLinkedList().append(head)
+SingleLinkedList().append(Node('15', _next=head))
 
 
 
