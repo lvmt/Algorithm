@@ -11,7 +11,6 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         ans = []
-
         if numRows == 1:
             return [[1]]
         if numRows == 2:
